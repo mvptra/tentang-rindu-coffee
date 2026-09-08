@@ -299,10 +299,10 @@ body{
 }
 
 .btn-profil {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   position: relative;
-  left: 50px;
+  left: 120px;
   border-radius: 50%;
   overflow: hidden;
 
@@ -316,10 +316,6 @@ body{
   text-decoration: none;
 
   cursor: pointer;
-
-  transition:
-    transform 0.15s ease,
-    box-shadow 0.2s ease;
 }
 
 .btn-profil img {
@@ -328,11 +324,6 @@ body{
 
   object-fit: cover;
   display: block;
-}
-
-.btn-profil:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
 }
 
 .btn-profil:active {

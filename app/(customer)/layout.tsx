@@ -38,14 +38,67 @@ export default function CustomerLayout({
   children: React.ReactNode ;
   }) {
   const pathname = usePathname();
-  const [sudahLogin, setSudahLogin] = useState(false);
+  const [sudahLogin, setSudahLogin] = useState<boolean | null>(null);
+  const [fotoProfil, setFotoProfil] = useState("/kopisusu.png");
 
   useEffect(() => {
+    const ambilDataProfil = () => {
     const statusLogin = localStorage.getItem("sudahLogin");
+    const fotoTersimpan = localStorage.getItem("fotoProfil");
+
     console.log("STATUS LOGIN:", statusLogin);
+    console.log("FOTO TERSIMPAN:", fotoTersimpan);
+
     if (statusLogin === "true") {
       setSudahLogin(true);
+    } 
+    
+    else {
+      setSudahLogin(false);
     }
+
+    if (fotoTersimpan) {
+    setFotoProfil(fotoTersimpan);
+    }
+  };
+
+    ambilDataProfil();
+
+    window.addEventListener(
+      "fotoProfilBerubah",
+       ambilDataProfil
+    );
+
+    window.addEventListener(
+      "statusLoginBerubah",
+       ambilDataProfil
+    );
+
+    window.addEventListener(
+      "pageshow",
+       ambilDataProfil
+    );
+
+    return () => {
+
+    window.removeEventListener(
+      "fotoProfilBerubah",
+       ambilDataProfil
+    );
+
+    window.removeEventListener(
+      "statusLoginBerubah",
+       ambilDataProfil
+    );
+
+    window.removeEventListener(
+      "pageshow",
+       ambilDataProfil
+    );
+
+
+  };
+
   }, []);
     console.log("SUDAH LOGIN:", sudahLogin);
 
@@ -92,7 +145,7 @@ export default function CustomerLayout({
 
         <div className="login-container">
 
-          {!sudahLogin ? (
+          {sudahLogin === null ?  null : !sudahLogin ? (
               <>
                 <a href="/login" className="btn-masuk">
                   Masuk
@@ -104,25 +157,15 @@ export default function CustomerLayout({
               </>
               ) : (
               <>
-                <button
-                  className="btn-keluar"
-                  onClick={() => {
-                    localStorage.removeItem("sudahLogin");
-                    setSudahLogin(false);
-                  }}
-                >
-                  Keluar
-                </button>
-
-                <a href="/profil" className="btn-profil">
-                  A
+                <a href="/profile" className="btn-profil">
+                  <img src={fotoProfil} alt="Foto profil" />
                 </a>
 
               </>
             )}
 
         </div>
-        
+            
       </nav>
 
       {/* Tempat masuknya isi konten dari page.tsx */}
