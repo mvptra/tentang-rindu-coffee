@@ -1,0 +1,180 @@
+/* ========================================= */
+/* 1. KARTU PEMBUNGKUS UTAMA                 */
+/* ========================================= */
+
+.halaman-pelanggan {
+  width: 100%;
+}
+
+
+/* ========================================= */
+/* 2. JUDUL                                  */
+/* ========================================= */
+
+.judul-pelanggan {
+  width: 100%;
+}
+
+.kata-kata-pelanggan {
+  font-size: 25px;
+  font-weight: 700;
+  color: #475569;
+  position: absolute;
+  top: 140px;
+  left: 370px;
+}
+
+
+/* ========================================= */
+/* 3. STRUCTURAL TABEL                       */
+/* ========================================= */
+
+.tabel-pelanggan {
+  width: 100%;
+  margin-top: 100px;
+  overflow-x: hidden;
+}
+
+.tabel-pelanggan table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  table-layout: fixed;
+}
+
+
+/* ========================================= */
+/* 4. HEADER TABEL                           */
+/* ========================================= */
+
+.tabel-pelanggan th {
+  padding: 16px 18px;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  color: #475569;
+  background-color: #f8fafc;
+  border-bottom: 2px solid #e2e8f0;
+}
+
+
+/* ========================================= */
+/* 5. CELL TABEL                             */
+/* ========================================= */
+
+.tabel-pelanggan td {
+  padding: 16px 18px;
+  vertical-align: middle;
+  text-align: center;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+
+/* ========================================= */
+/* 6. EFEK HOVER BARIS                       */
+/* ========================================= */
+
+.tabel-pelanggan tbody tr:hover {
+  background-color: #fcfcfd;
+}
+
+
+/* ========================================= */
+/* 7. ISI MASING-MASING KOLOM PELANGGAN      */
+/* ========================================= */
+
+.kotak-nama,
+.kotak-email,
+.kotak-no-telepon,
+.kotak-total-pesanan,
+.kotak-total-belanja {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+
+/* ========================================= */
+/* 8. NAMA                                   */
+/* ========================================= */
+
+.isi-nama {
+  width: 100%;
+  padding: 0;
+  font-size: 14px;
+  color: #475569;
+  text-align: center;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* ========================================= */
+/* 9. EMAIL                                  */
+/* ========================================= */
+
+.isi-email {
+  width: 100%;
+  padding: 0;
+  font-size: 14px;
+  color: #475569;
+  text-align: center;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* ========================================= */
+/* 10. NO. TELEPON                           */
+/* ========================================= */
+
+.isi-no-telepon {
+  width: 100%;
+  padding: 0;
+  font-size: 14px;
+  color: #475569;
+  text-align: center;
+
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+/* ========================================= */
+/* 11. TOTAL PESANAN                         */
+/* ========================================= */
+
+.isi-total-pesanan {
+  width: 100%;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #475569;
+  text-align: center;
+
+  white-space: nowrap;
+}
+
+
+/* ========================================= */
+/* 12. TOTAL BELANJA                         */
+/* ========================================= */
+
+.isi-total-belanja {
+  width: 100%;
+  padding: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #475569;
+  text-align: center;
+
+  white-space: nowrap;
+}
+

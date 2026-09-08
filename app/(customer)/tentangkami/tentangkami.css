@@ -1,0 +1,193 @@
+/* ========================= */
+/* Reset */
+/* ========================= */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ========================= */
+/* Halaman */
+/* ========================= */
+
+.halaman-tentang{
+ width:100%;
+ background:#FDFCFB;
+ padding:180px 120px 80px;
+
+}
+
+/* ========================= */
+/* Hero */
+/* ========================= */
+
+.hero-tentang{
+ text-align:center;
+ margin-bottom:100px;
+}
+
+.judul-hero{
+ font-size:52px;
+ color:#3B2A26;
+ font-weight:700;
+ margin-bottom:20px;
+}
+
+.deskripsi-hero{
+ width:700px;
+ margin:auto;
+ color:#6E5D56;
+ font-size:20px;
+ line-height:1.8;
+
+}
+
+/* ========================= */
+/* Section */
+/* ========================= */
+
+.section-tentang{
+ display:flex;
+ align-items:center;
+ justify-content:space-between;
+ gap:80px;
+ margin-bottom:120px;
+}
+
+/* Membalik posisi gambar */
+
+.section-tentang.reverse{
+ flex-direction:row-reverse;
+}
+
+/* ========================= */
+/* Gambar */
+/* ========================= */
+
+.gambar-section{
+ flex:1;
+}
+
+.gambar-section img{
+ width:100%;
+ border-radius:25px;
+ box-shadow:0 18px 45px rgba(0,0,0,.15);
+ transition:.35s ease;
+}
+
+.gambar-section img:hover{
+ transform:scale(1.02);
+}
+
+/* ========================= */
+/* Teks */
+/* ========================= */
+
+.teks-section{
+ flex:1;
+}
+
+.teks-section h2{
+ font-size:42px;
+ color:#3B2A26;
+ margin-bottom:25px;
+}
+
+.teks-section p{
+ font-size:19px;
+ color:#5A463E;
+ line-height:2;
+ text-align:justify;
+ letter-spacing:.3px;
+}
+
+/* ========================= */
+/* ULASAN PELANGGAN */
+/* ========================= */
+
+.bagian-ulasan{
+ margin-top: 90px;
+ text-align: center;
+}
+
+.judul-ulasan{
+ font-size: 40px;
+ font-weight: 700;
+ color: #2F2F2F;
+}
+
+.subjudul-ulasan{
+ margin-top: 12px;
+ color: #777;
+ font-size: 18px;
+}
+
+.wadah-kartu-ulasan{
+ margin-top: 50px;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ gap: 30px;
+ flex-wrap: wrap;
+}
+
+.kartu-ulasan{
+ width: 360px;
+ min-height: 210px;
+ background: white;
+ border-radius: 50px;
+ padding: 28px;
+ box-shadow:
+ 0 12px 30px rgba(0,0,0,.08);
+ transition: .3s;
+}
+
+.kartu-ulasan:hover{
+ transform: translateY(-8px);
+ box-shadow: 0 18px 35px rgba(0,0,0,.12);
+}
+
+.header-ulasan{
+ display: flex;
+ align-items: center;
+ gap: 18px;
+}
+
+.avatar-ulasan{
+ width: 70px;
+ height: 70px;
+ border-radius: 25px;
+ background: #D4AF37;
+ color: white;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ font-size: 28px;
+ font-weight: bold;
+ flex-shrink: 0;
+}
+
+.identitas-ulasan{
+ text-align: left;
+}
+
+.identitas-ulasan h3{
+ font-size: 22px;
+ color: #2F2F2F;
+}
+
+.bintang-ulasan{
+ margin-top: 5px;
+ color: #D4AF37;
+ font-size: 18px;
+}
+
+.isi-ulasan{
+ margin-top: 25px;
+ text-align: left;
+ line-height: 1.7;
+ color: #666;
+ font-size: 16px;
+}

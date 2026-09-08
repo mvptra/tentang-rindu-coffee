@@ -1,0 +1,210 @@
+/* ========================= */
+/* Background Halaman Login */
+/* ========================= */
+
+*::before,
+*::after{
+    box-sizing: border-box;
+}
+
+html,
+body{
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.pembungkus-login{
+ width:100%;
+ min-height:100vh;
+ background-image:url("/bglogin.png");
+ background-size:cover;
+ background-position:center;
+ background-repeat:no-repeat;
+ display:flex;
+ justify-content:center;
+ align-items:center;
+}
+
+/* ========================= */
+/* Card Login */
+/* ========================= */
+
+.kartu-login{
+ width:420px;
+ background: rgba(255,255,255,.68);
+ backdrop-filter: blur(25px);
+ -webkit-backdrop-filter: blur(25px);
+ border: 1px solid rgba(255,255,255,.75);
+ border-radius:28px;
+ padding:45px;
+ box-shadow:
+    0 25px 60px rgba(0,0,0,.18),
+    0 10px 30px rgba(0,0,0,.10),
+    inset 0 1px 0px rgba(255,255,255,.6);
+ transition: .3s ease;
+ padding-left: 20px;
+ padding-right: 20px;
+}
+
+/* ========================= */
+/* Judul */
+/* ========================= */
+
+.judul-login{
+ display: inline-block;
+ font-family: var(--font-playfair);
+ font-size:40px;
+ color:#3E2723;
+ margin-bottom:10px;
+ font-weight:700;
+ margin-left: 70px;
+ margin-top: -10px;
+}
+
+.subjudul-login{
+ font-family: var(--font-league);
+ color:#4F3D36;
+ font-weight: 700;
+ margin-bottom:35px;
+ font-size: 20px;
+ line-height:1.6;
+ margin-left: 89px;
+ margin-top: 10px;
+}
+
+/* ========================= */
+/* Form */
+/* ========================= */
+
+.form-login{
+ display:flex;
+ flex-direction:column;
+ gap:25px;
+ margin-top: 40px;
+}
+
+/* ========================= */
+/* Grup Input */
+/* ========================= */
+
+.grup-input{
+ display:flex;
+ flex-direction:column;
+ gap:8px;
+}
+
+.grup-input input{
+ height:45px;
+ width: 60%;
+ padding:0px 20px;
+ border:1.5px solid #D8D8D8;
+ border-radius:10px;
+ outline:none;
+ font-size:16px;
+ transition:.3s;
+ margin-left: 70px;
+}
+
+.logo-kopi{
+ width:80px;
+ height:80px;
+ border-radius:50%;
+ background-image:url("/logogelas.png");
+ background-size:cover;
+ background-position:center;
+ background-repeat:no-repeat;
+ margin-left: 167px;
+ margin-top: -30px;
+}
+
+.lupa-password{
+ font-size: 17px;
+ margin-left: 74px;
+ margin-top: 3px;
+ color: #3B2A26;
+ font-weight: 600;
+ font-family: var(--font-league);
+ text-decoration: none;
+ transition: .3s ease;
+}
+
+.lupa-password:hover{
+ color: #8B5E3C;
+ text-decoration: none;
+}
+
+.grup-input input:focus{
+ border-color:#6F4E37;
+ box-shadow:0 0 0 4px rgba(111,78,55,.15);
+}
+
+/* ========================= */
+/* Tombol Login */
+/* ========================= */
+
+.btn-login{
+ margin-top:10px;
+ height:50px;
+ width: 25%;
+ margin-left: 155px;
+ margin-top: 10px;
+ border:none;
+ border-radius:10px;
+ background:#5D4037;
+ color:white;
+ font-size:17px;
+ font-weight:700;
+ cursor:pointer;
+ transition:.3s;
+}
+
+.btn-login:hover{
+ background:#6F4E37;
+ transform:translateY(-2px);
+}
+
+.metode-masuk{
+ font-size: 17px;
+ margin-left: 135px;
+ margin-top: 10px;
+ color: #3B2A26;
+ font-weight: 600;
+
+}
+
+.masuk-daftar{
+ font-size: 17px;
+ margin-left: 107px;
+ margin-top: 10px;
+ color: #3B2A26;
+ font-weight: 600;
+
+}
+
+.link-daftar{
+ color: #3B2A26;
+ font-weight: 700;
+ text-decoration: none;
+ transition: .3s ease;
+}
+
+.link-daftar:hover{
+ color: #8B5E3C;
+ text-decoration: none;
+}
+
+.icon-google{
+ cursor: pointer;
+ transition: .25s ease;
+ margin-left: 190px;
+}
+
+.icon-google:hover{
+ transform: scale(1.1);
+}
+
+.icon-google:active{
+ transform: scale(.95);
+}
+

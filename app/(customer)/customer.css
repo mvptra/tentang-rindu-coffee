@@ -1,0 +1,340 @@
+/* app/(customer)/customer.css */
+/* Pembungkus Slider */
+*,
+*::before,
+*::after{
+ box-sizing: border-box;
+}
+
+html,
+body{
+ margin: 0;
+ padding: 0;
+ overflow-x: hidden;
+}
+
+@font-face {
+ font-family: "Recoleta";
+ src: url("/fonts/Recoleta-Bold.otf") format("opentype");
+ font-weight: 2000;
+ font-style: normal;
+}
+
+.beranda{
+  background: #FDFCFB;
+}
+
+.bagian-slider{
+ position: relative;
+ width: 100%;
+ height: 600px;
+ padding-top: 122px;
+ overflow: hidden;
+}
+
+/* Gambar Banner */
+
+.gambar-slider{
+ min-width: 100%;
+ height: 100%;
+ object-fit: cover;
+}
+
+.wadah-slider{
+ display: flex;
+ width: 100%;
+ height: 100%;
+ transition: transform 1.6s cubic-bezier(0.4,0,0.2,1);
+}
+/* Tombol Kiri dan Kanan */
+
+.tombol-kiri,
+.tombol-kanan{
+ position: absolute;
+ top: 62%;
+ transform: translateY(-50%);
+ width: 55px;
+ height: 55px;
+ border: none;
+ border-radius: 50%;
+ background: rgba(255,255,255,.5);
+ font-size: 28px;
+ cursor: pointer;
+ transition: .3s;
+}
+
+.tombol-kiri{
+ left: 25px;
+}
+
+.tombol-kanan{
+ right: 25px;
+}
+
+.tombol-kiri:hover,
+.tombol-kanan:hover{
+ background: rgba(255,255,255,.8);
+}
+
+/* Pembungkus Indikator */
+
+.wadah-indikator{
+ position: absolute;
+ bottom: 30px;
+ left: 50%;
+ transform: translateX(-50%);
+ display: flex;
+ gap: 10px;
+}
+
+/* Titik */
+
+.indikator{
+ width: 12px;
+ height: 12px;
+ border-radius: 50%;
+ background: #FFFFFF;
+ cursor: pointer;
+ transition: .3s;
+}
+
+/* Titik Aktif */
+
+.aktif{
+ background: #5D4037;
+}
+
+
+
+/* PAKSA SEMUA LINK DI NAVBAR PAKAI POPPINS */
+.layout-customer{
+ position: relative;
+}
+
+.navbar-container{
+ position: absolute;
+ z-index: 9999 ;
+ top: 25px;
+ left: 550px;
+ background: none;
+ padding: 18px 40px;
+ display: flex;
+ align-items: center;
+}
+
+.navbar-links{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ font-size: 20px;
+ font-family: inherit;
+ gap: 35px;
+ left: -80px;
+ position: relative;
+ white-space: nowrap;
+}
+
+.nav-link{
+ color: #4F3D36;
+ font-weight: 600;
+ text-decoration: none;
+ font-family: inherit;
+}
+
+.nav-link-aktif {
+ color: #B8945B;
+ font-weight: 700;
+}
+
+.login-container{
+ display: flex;
+ align-items: center;
+ gap: 10px;
+ left: 107%;
+ position: absolute;
+}
+
+.btn-masuk{
+ text-decoration: none;
+ border-radius:  999px;
+ background:  #FFFFFF;
+ color: #6F4E37;
+ border: 2px solid #6F4E37;
+ font-weight: 600;
+ padding: 12px 15px;
+ transition: .3s ease;
+ flex-shrink: 0;
+}
+
+
+.btn-navbar-daftar{
+ text-decoration: none;
+ border-radius:  999px;
+ background: #5D4037;
+ color: white;
+ border: 2px solid #5D4037;   
+ font-weight: 600;
+ padding: 12px 15px;
+ flex-shrink: 0;
+}
+
+
+.toko-logo{
+ position: absolute;
+ top: 38px;
+ left: 50px;
+ font-family: "Recoleta", serif;
+ font-size: 34px;
+ font-weight: 1000;
+ color: #8e7115;
+ letter-spacing: 1px;
+ user-select: none;
+}
+
+.navbar-line{
+ position: absolute;
+ top: 120px;          /* atur sesuai posisi */
+ left: -1px;
+ right: -1px;
+ height: 1px;
+ background: #BDBDBD;
+ box-shadow: 0 2px 10px rgba(0,0,0,.15);
+ z-index:  99999;
+}
+
+.link-keranjang{
+ display:flex;
+ align-items:center;
+ text-decoration:none;
+}
+
+.icon-keranjang{
+ color:#3B2A26;
+ cursor:pointer;
+ transition:.3s ease;
+ position: absolute;
+ margin-left: 968px;
+ margin-top: 44px;
+
+}
+
+.icon-keranjang:hover{
+ color:#8B5E3C;
+ transform:scale(1.08);
+}
+
+/* ========================= */
+/* PRODUK BEST SELLER */
+/* ========================= */
+
+.produk-best-seller{
+ margin-top: 60px;
+ text-align: center;
+}
+
+.judul-produk-best-seller{
+ font-family: var(--font-playfair);
+ font-size: 42px;
+ color: #B8945B;
+ font-weight: 700;
+ margin-left: 10px;
+ margin-bottom: 60px;
+}
+
+.wadah-produk-best-seller{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ gap: 60px; /* Jarak antar produk */
+ flex-wrap: wrap;
+}
+
+.item-produk-best-seller{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+}
+
+
+.kartu-produk-best-seller{
+ width: 230px;
+ height:220px;
+ background: #F8F3ED;
+ border-radius: 28px;
+ overflow: hidden;
+ text-align: center;
+ transition: .3s ease;
+ cursor: pointer;
+}
+
+.kartu-produk-best-seller:hover{
+ transform: translateY(-8px);
+ box-shadow: 0px 15px 35px rgba(0,0,0,.12);
+}
+
+.gambar-produk-best-seller{
+ width: 100%;
+ height: 220px;
+ object-fit: cover;
+}
+
+.nama-produk-best-seller{
+ margin-top:18px;
+ font-size:22px;
+ color:#4F3D36;
+ font-weight:700;
+ font-family:var(--font-playfair);
+}
+
+.harga-produk-best-seller{
+ margin-top:10px;
+ font-size:18px;
+ color:#E3C45A;
+ text-shadow:
+ 0 0 3px rgba(255,255,255,.55),
+ 0 0 8px rgba(255,255,255,.30),
+ 0 0 12px rgba(227,196,90,.30);
+ font-weight:600;
+ font-family:var(--font-playfair);
+}
+
+.btn-profil {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  left: 50px;
+  border-radius: 50%;
+  overflow: hidden;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: #F1E9E3;
+  border: 2px solid #5D4037;
+
+  text-decoration: none;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.2s ease;
+}
+
+.btn-profil img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  display: block;
+}
+
+.btn-profil:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+}
+
+.btn-profil:active {
+  transform: scale(0.85);
+}

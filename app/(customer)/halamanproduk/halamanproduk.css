@@ -1,0 +1,548 @@
+/* ========================= */
+/* HALAMAN PRODUK */
+/* ========================= */
+
+.halaman-produk {
+  min-height: 100vh;
+  background: #FDFCFB;
+  padding-top: 150px;
+  padding-bottom: 80px;
+}
+
+
+/* ========================= */
+/* BAGIAN PRODUK */
+/* ========================= */
+
+.bagian-produk {
+  width: 90%;
+  max-width: 1250px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.kepala-produk {
+  order: 1;
+}
+
+.pencarian-produk {
+  order: 2;
+}
+
+.kategori-produk {
+  order: 3;
+}
+
+.daftar-produk {
+  order: 4;
+}
+
+/* ========================= */
+/* KEPALA PRODUK */
+/* ========================= */
+
+.kepala-produk {
+  text-align: center;
+}
+
+
+
+.label-produk {
+  margin: 0 0 12px;
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: #B8945B;
+}
+
+.judul-halaman-produk {
+  margin: 0;
+  font-family: var(--font-playfair);
+  font-size: 48px;
+  font-weight: 700;
+  color: #4F3D36;
+}
+
+.deskripsi-halaman-produk {
+  max-width: 600px;
+  margin: 18px auto 0;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #7A6A63;
+}
+
+
+/* ========================= */
+/* KATEGORI */
+/* ========================= */
+
+.kategori-produk {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  margin-top: 45px;
+  flex-wrap: wrap;
+}
+
+.kategori-produk button {
+  border: none;
+  background: transparent;
+  color: #6F4E37;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: .3s ease;
+}
+
+.kategori-produk button:hover {
+  background: #F1E8DE;
+}
+
+.kategori-produk .kategori-aktif {
+  background: #5D4037;
+  color: #FFFFFF;
+}
+
+
+/* ========================= */
+/* PENCARIAN */
+/* ========================= */
+
+.pencarian-produk {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.pencarian-produk input {
+  width: 430px;
+  height: 50px;
+  padding: 0 30px;
+  border: 1px solid #D8CCC4;
+  border-radius: 999px;
+  outline: none;
+  background: #FFFFFF;
+  color: #4F3D36;
+  font-family: inherit;
+  font-size: 17px;
+}
+
+.pencarian-produk input:focus {
+  border-color: #B8945B;
+}
+
+
+/* ========================= */
+/* DAFTAR PRODUK */
+/* ========================= */
+
+.daftar-produk {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 60px;
+  flex-wrap: wrap;
+  margin-top: 55px;
+}
+
+
+
+/* ========================= */
+/* KARTU PRODUK */
+/* ========================= */
+
+.kartu-produk {
+  width: 230px;
+  background: transparent;
+  text-align: center;
+  transition: .3s ease;
+  cursor: pointer;
+}
+
+.kartu-produk:hover {
+  transform: translateY(-8px);
+}
+
+
+/* ========================= */
+/* GAMBAR PRODUK */
+/* ========================= */
+
+.gambar-produk {
+  width: 230px;
+  height: 220px;
+  overflow: hidden;
+  border-radius: 28px;
+  background: #F8F3ED;
+}
+
+.gambar-produk img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: .4s ease;
+}
+
+.kartu-produk:hover .gambar-produk img {
+  transform: scale(1.05);
+}
+
+
+
+/* ========================= */
+/* INFORMASI PRODUK */
+/* ========================= */
+
+.informasi-produk {
+  text-align: left;
+  padding: 0;
+  position: relative;
+  flex-direction: column;
+}
+
+
+.nama-produk {
+  margin-top: 18px;
+  margin-bottom: 0;
+  min-height: 55px;
+  font-size: 22px;
+  color: #4F3D36;
+  font-weight: 700;
+  font-family: var(--font-playfair);
+}
+
+.harga-produk {
+  margin-top: 10px;
+  font-size: 18px;
+  color: #E3C45A;
+  text-shadow:
+    0 0 3px rgba(255,255,255,.55),
+    0 0 8px rgba(255,255,255,.30),
+    0 0 12px rgba(227,196,90,.30);
+  font-weight: 600;
+  font-family: var(--font-playfair);
+}
+
+
+
+/* ========================= */
+/* TOMBOL KERANJANG */
+/* ========================= */
+
+.tombol-tambah-keranjang {
+  width: 42px;
+  height: 42px;
+  border: none;
+  border-radius: 50%;
+  margin-top: 14px;
+  background: #5D4037;
+  color: #FFFFFF;
+  cursor: pointer;
+  transition: .3s ease;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-top: -25px;
+  transition: transform 0.1s ease;
+}
+
+.tombol-tambah-keranjang:active {
+  transform: scale(0.85);
+}
+
+/* ========================= */
+/* ICON KERANJANG */
+/* ========================= */
+.icon-keranjang-halaman {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: #5D4037;
+  color: #FFFFFF;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  right: 25px;
+  bottom: 30px;
+
+  position: fixed;
+  cursor: pointer;
+  z-index: 9999;
+  transition: transform 0.15s ease;
+}
+
+.icon-keranjang-halaman:active {
+  transform: scale(0.85);
+}
+
+.jumlah-keranjang {
+  position: absolute;
+  top: -9px;
+  right: -9px;
+
+  min-width: 30px;
+  height: 30px;
+  padding: 0 6px;
+
+  border-radius: 50%;
+  background: #D32F2F;
+  color: #FFFFFF;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 30px;
+
+  box-sizing: border-box;
+}
+
+/* ========================= */
+/* KOTAK KERANJANG */
+/* ========================= */
+
+.kotak-keranjang {
+ position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 420px;
+  max-height: 600px;
+
+  background: #FFFFFF;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
+
+  z-index: 100000;
+  overflow: hidden;
+}
+
+
+/* ========================= */
+/* KEPALA KERANJANG */
+/* ========================= */
+
+.kepala-keranjang {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 22px 40px;
+
+  border-bottom: 1px solid #EEEEEE;
+}
+
+.kepala-keranjang h2 {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+
+  margin-top: 80px;
+
+  font-size: 22px;
+  color: #4F3D36;
+}
+
+.tombol-tutup-keranjang {
+  width: 35px;
+  height: 35px;
+  border: none;
+  background: transparent;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto;
+  transition: transform 0.15s ease;
+  cursor: pointer;
+}
+
+.tombol-tutup-keranjang:active {
+  transform: scale(0.8);
+}
+
+
+/* ========================= */
+/* ISI KERANJANG */
+/* ========================= */
+
+.daftar-isi-keranjang {
+  max-height: 380px;
+  overflow-y: auto;
+  padding-top: 30px;
+}
+
+.item-keranjang {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding: 16px 20px;
+
+  border-bottom: 1px solid #F0F0F0;
+}
+
+.item-keranjang img {
+  width: 65px;
+  height: 65px;
+
+  border-radius: 12px;
+
+  object-fit: cover;
+}
+
+.informasi-keranjang {
+  flex: 1;
+}
+
+.informasi-keranjang h3 {
+  margin: 0 0 5px;
+
+  font-size: 15px;
+  color: #4F3D36;
+}
+
+.informasi-keranjang p {
+  margin: 0;
+
+  font-size: 14px;
+  color: #B8945B;
+}
+
+
+/* ========================= */
+/* JUMLAH PRODUK */
+/* ========================= */
+
+.jumlah-produk-keranjang {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.jumlah-produk-keranjang button {
+  width: 26px;
+  height: 26px;
+
+  border: 1px solid #D8C8BD;
+  border-radius: 50%;
+
+  background: #FFFFFF;
+  color: #5D4037;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+}
+
+.jumlah-produk-keranjang span {
+  min-width: 18px;
+
+  text-align: center;
+
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+/* ========================= */
+/* HAPUS PRODUK */
+/* ========================= */
+
+.tombol-hapus-keranjang {
+  border: none;
+  background: transparent;
+
+  color: #D32F2F;
+
+  cursor: pointer;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+/* ========================= */
+/* CHECKOUT */
+/* ========================= */
+
+.bagian-checkout-keranjang {
+  padding: 18px 20px;
+
+  border-top: 1px solid #EEEEEE;
+}
+
+.total-keranjang {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 15px;
+
+  color: #4F3D36;
+}
+
+.total-keranjang strong {
+  color: #B8945B;
+  font-size: 18px;
+}
+
+.tombol-checkout {
+  width: 100%;
+  height: 45px;
+
+  border: none;
+  border-radius: 12px;
+
+  background: #5D4037;
+  color: #FFFFFF;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  cursor: pointer;
+}
+
+/* ========================= */
+/* RESPONSIVE */
+/* ========================= */
+
+
+@media (max-width: 600px) {
+
+  .halaman-produk {
+    padding-top: 130px;
+  }
+
+  .judul-halaman-produk {
+    font-size: 36px;
+  }
+
+  .deskripsi-halaman-produk {
+    font-size: 14px;
+  }
+
+  .daftar-produk {
+    gap: 40px;
+  }
+
+  .pencarian-produk input {
+    width: 100%;
+  }
+
+}
