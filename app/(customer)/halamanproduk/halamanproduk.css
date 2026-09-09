@@ -231,6 +231,8 @@
 
 
 
+
+
 /* ========================= */
 /* TOMBOL KERANJANG */
 /* ========================= */
@@ -314,13 +316,13 @@
 /* ========================= */
 
 .kotak-keranjang {
- position: fixed;
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 
   width: 420px;
-  max-height: 600px;
+  max-height: calc(100vh - 40px);
 
   background: #FFFFFF;
   border-radius: 20px;
@@ -328,6 +330,9 @@
 
   z-index: 100000;
   overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
 }
 
 
@@ -379,9 +384,21 @@
 /* ========================= */
 
 .daftar-isi-keranjang {
+  flex: 1;
+  min-height: 0;
   max-height: 380px;
+
   overflow-y: auto;
+  overflow-x: hidden;
+
   padding-top: 30px;
+
+  scrollbar-width: none;
+
+}
+
+.daftar-isi-keranjang::-webkit-scrollbar {
+  display: none;
 }
 
 .item-keranjang {
@@ -483,6 +500,7 @@
 
 .bagian-checkout-keranjang {
   padding: 18px 20px;
+  flex-shrink: 0;
 
   border-top: 1px solid #EEEEEE;
 }
@@ -503,7 +521,7 @@
 }
 
 .tombol-checkout {
-  width: 100%;
+  width: 30%;
   height: 45px;
 
   border: none;
@@ -514,8 +532,139 @@
 
   font-size: 15px;
   font-weight: 600;
-
+  display: block;
+  position: relative;
+  top: 15px;
+  margin: 0 auto;
   cursor: pointer;
+}
+
+/* ========================= */
+/* RECTANGLE QRIZ */
+/* ========================= */
+
+.qris-pembayaran {
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.qris-pembayaran:active {
+  transform: scale(0.85);
+}
+
+.kotak-qris {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 380px;
+  background: #FFFFFF;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.18);
+  z-index: 200000;
+  overflow: hidden;
+}
+
+.kepala-qris {
+  position: static;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 22px;
+  border-bottom: 1px solid #EEEEEE;
+}
+
+.kepala-qris h2 {
+  margin: 0;
+  font-size: 26px;
+  color: #4F3D36;
+  font-family: var(--font-playfair);
+}
+
+.tombol-tutup-qris {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 40px;
+  height: 40px;
+  border: none;
+  background: transparent;
+  color: #4F3D36;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+}
+
+.tombol-tutup-qris:active {
+  transform: scale(0.85);
+}
+
+.gambar-qris-sementara {
+  width: 280px;
+  height: 280px;
+  margin: 30px auto 35px;
+  background: #F5EFE9;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.gambar-qris-sementara span {
+  font-size: 24px;
+  font-weight: 700;
+  color: #8B7355;
+  font-family: var(--font-playfair);
+}
+
+/* ========================= */
+/* UPLOAD BUKTI PEMBAYARAN */
+/* ========================= */
+
+.upload-bukti-pembayaran {
+  width: 100%;
+  margin-top: 15px;
+}
+
+.teks-upload-bukti {
+  display: block;
+  font-size: 18px;
+  font-weight: 700;
+  color: #4F3D36;
+  margin-bottom: 12px;
+}
+
+.kotak-upload-bukti {
+  width: 280px;
+  height: 100px;
+  margin: 0 auto;
+  border: 2px dashed #D6C7BC;
+  border-radius: 16px;
+  background: #F9F5F1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.15s ease;
+  box-sizing: border-box;
+}
+
+.kotak-upload-bukti input {
+  display: none;
+}
+
+.teks-dalam-upload {
+  font-size: 16px;
+  font-weight: 600;
+  color: #6D554A;
+  text-align: center;
+}
+
+.kotak-upload-bukti:active {
+  transform: scale(0.95);
 }
 
 /* ========================= */

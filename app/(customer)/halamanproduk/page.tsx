@@ -135,6 +135,8 @@ export default function HalamanProduk() {
 
   const [keranjang, setKeranjang] = useState<ProdukKeranjang[]>([]);
   const [keranjangBuka, setKeranjangBuka] = useState(false);
+  const [qrisBuka, setQrisBuka] = useState(false);
+  const [buktiPembayaran, setBuktiPembayaran] = useState<File | null>(null);
   const [kategoriAktif, setKategoriAktif] = useState("Semua");
   const [pencarian, setPencarian] = useState("");
 
@@ -520,7 +522,7 @@ export default function HalamanProduk() {
               <div className="total-keranjang">
 
                 <span>
-                  Total
+                  Total Pembayaran
                 </span>
 
                 <strong>
@@ -542,6 +544,49 @@ export default function HalamanProduk() {
 
               </div>
 
+               <div className="total-keranjang">
+                <span>
+                  Metode Pembayaran
+                </span>
+
+                <strong
+                className="qris-pembayaran"
+                onClick={() => setQrisBuka(true)}
+                >
+                  QRIS
+                </strong>
+              </div>
+
+              <div className="upload-bukti-pembayaran">
+
+                <span className="teks-upload-bukti">
+                  Upload Bukti Foto
+                </span>
+
+                <label className="kotak-upload-bukti">
+
+                  <input
+                    type="file"
+                    accept="image/*"
+                    onChange={(e) => {
+                      const file = e.target.files?.[0];
+
+                      if (file) {
+                        setBuktiPembayaran(file);
+                      }
+                    }}
+                  />
+
+                  <span className="teks-dalam-upload">
+                    {buktiPembayaran
+                      ? buktiPembayaran.name
+                      : "Upload Foto"}
+                  </span>
+
+                </label>
+
+              </div>
+        
               <button className="tombol-checkout">
                 Checkout
               </button>
@@ -550,6 +595,33 @@ export default function HalamanProduk() {
 
           </div>
 
+        )}
+
+        {qrisBuka && (
+          <div className="kotak-qris">
+
+            <div className="kepala-qris">
+
+              <h2>
+                QRIS
+              </h2>
+
+              <button
+                className="tombol-tutup-qris"
+                onClick={() => setQrisBuka(false)}
+              >
+                <X size={22} />
+              </button>
+
+            </div>
+
+            <div className="gambar-qris-sementara">
+              <span>
+                QRIS
+              </span>
+            </div>
+
+          </div>
         )}
 
       </section>
