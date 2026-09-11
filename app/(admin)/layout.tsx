@@ -15,6 +15,11 @@ import {
   Settings,
   LogOut,
   Menu,
+  CreditCard,
+  Shield,
+  Bell,
+  Store,
+  User,
   Search
 } from "lucide-react";
 
@@ -29,6 +34,61 @@ export default function LayoutAdmin({
   children: React.ReactNode;
 }) {
   const [sidebarKecil, setSidebarKecil] = useState(false);
+  const [pengaturanBuka, setPengaturanBuka] = useState(false);
+
+   <button
+    className="tombol-pengaturan-header"
+    onClick={() => setPengaturanBuka(!pengaturanBuka)}
+  >
+    <Settings size={24} />
+  </button>
+
+  {pengaturanBuka && (
+    <div className="panel-pengaturan-header">
+
+    
+      <Link
+        href="/pengaturan/profil"
+        className="item-panel-pengaturan"
+      >
+        <User size={20} />
+        <span>Profil Admin</span>
+      </Link>
+
+      <Link
+        href="/pengaturan/keamanan"
+        className="item-panel-pengaturan"
+      >
+        <Shield size={20} />
+        <span>Keamanan</span>
+      </Link>
+
+      <Link
+        href="/pengaturan/notifikasi"
+        className="item-panel-pengaturan"
+      >
+        <Bell size={20} />
+        <span>Notifikasi</span>
+      </Link>
+
+      <Link
+        href="/pengaturan/toko"
+        className="item-panel-pengaturan"
+      >
+        <Store size={20} />
+        <span>Toko</span>
+      </Link>
+
+      <Link
+        href="/pengaturan/pembayaran"
+        className="item-panel-pengaturan"
+      >
+        <CreditCard size={20} />
+        <span>Pembayaran</span>
+      </Link>
+
+    </div>
+  )}
 
   return (
     <div className= {`halaman-admin   ${
@@ -69,11 +129,6 @@ export default function LayoutAdmin({
             Laporan Keuangan
           </Link>
 
-          <Link href="/pengaturan" className="item-menu">
-           <Settings />
-            Pengaturan
-          </Link>
-
           <Link href="/" className="item-menu keluar">
           <LogOut />
             Logout
@@ -96,6 +151,64 @@ export default function LayoutAdmin({
           <Search />
           <input type="text" placeholder="Search Produk..." />
         </div>
+
+         <button
+    className="tombol-pengaturan-header"
+    onClick={() => setPengaturanBuka(!pengaturanBuka)}
+  >
+    <Settings size={24} />
+  </button>
+
+  {pengaturanBuka && (
+    <div className="panel-pengaturan-header">
+
+      <div className="judul-panel-pengaturan">
+        <Settings size={22} />
+        <span>Pengaturan</span>
+      </div>
+
+      <Link
+        href="/pengaturan/profil"
+        className="item-panel-pengaturan"
+      >
+        <User size={20} />
+        <span>Profil Admin</span>
+      </Link>
+
+      <Link
+        href="/pengaturan/keamanan"
+        className="item-panel-pengaturan"
+      >
+        <Shield size={20} />
+        <span>Keamanan</span>
+      </Link>
+
+      <Link
+        href="/pengaturan/notifikasi"
+        className="item-panel-pengaturan"
+      >
+        <Bell size={20} />
+        <span>Notifikasi</span>
+      </Link>
+
+      <Link
+        href="/pengaturan/toko"
+        className="item-panel-pengaturan"
+      >
+        <Store size={20} />
+        <span>Toko</span>
+      </Link>
+
+      <Link
+        href="/pengaturan/pembayaran"
+        className="item-panel-pengaturan"
+      >
+        <CreditCard size={20} />
+        <span>Pembayaran</span>
+      </Link>
+
+    </div>
+  )}
         </div>
 
       <div className="rectangle-admin">

@@ -233,3 +233,121 @@ body {
 .sidebar-collapse .search-admin {
   margin-left: 100px;
 }
+
+/* ========================= */
+/* TOMBOL PENGATURAN HEADER */
+/* ========================= */
+
+.header-admin {
+  position: relative;
+}
+
+.tombol-pengaturan-header {
+  position: absolute;
+
+  right: 35px;
+  top: 50%;
+
+  transform: translateY(-50%);
+
+  width: 45px;
+  height: 45px;
+
+  border: none;
+  border-radius: 50%;
+
+  background: #4F6FE8;
+  color: #FFFFFF;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition: 0.3s ease;
+}
+
+.tombol-pengaturan-header:hover {
+  transform: translateY(-50%) scale(1.05);
+}
+
+
+/* ========================= */
+/* PANEL PENGATURAN */
+/* ========================= */
+
+.panel-pengaturan-header {
+  position: absolute;
+
+  top: 70px;
+  right: 25px;
+
+  width: 270px;
+
+  padding: 18px;
+
+  background: #FFFFFF;
+
+  border: 1px solid #E5E7EB;
+
+  border-radius: 16px;
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+
+  z-index: 99999;
+}
+
+
+/* ========================= */
+/* JUDUL PANEL */
+/* ========================= */
+
+.judul-panel-pengaturan {
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  padding-bottom: 15px;
+  margin-bottom: 8px;
+
+  border-bottom: 1px solid #EEEEEE;
+
+  color: #333333;
+
+  font-size: 17px;
+  font-weight: 700;
+}
+
+
+/* ========================= */
+/* ITEM PANEL */
+/* ========================= */
+
+.item-panel-pengaturan {
+  display: flex;
+  align-items: center;
+
+  gap: 12px;
+
+  width: 100%;
+
+  padding: 12px 10px;
+
+  border-radius: 10px;
+
+  color: #526783;
+
+  text-decoration: none;
+
+  font-size: 14px;
+  font-weight: 500;
+
+  transition: 0.2s ease;
+}
+
+.item-panel-pengaturan:hover {
+  background: #F2F5FF;
+  color: #4F6FE8;
+}
