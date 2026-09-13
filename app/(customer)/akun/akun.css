@@ -1,0 +1,54 @@
+.halaman-akun {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 150px 40px 60px;
+}
+
+.halaman-akun .akun-card {
+  width: 500px;
+  background: #FFFFFF;
+  border-radius: 25px;
+  padding: 40px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+.halaman-akun .akun-judul {
+  font-size: 32px;
+  font-weight: 700;
+  color: #4F3D36;
+}
+
+.halaman-akun .garis-akun {
+  width: 100%;
+  height: 1px;
+  background: #E5E0DC;
+  margin: 25px 0;
+}
+
+.halaman-akun .akun-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.halaman-akun .akun-menu-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 15px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 600;
+  color: #6F4E37;
+  border: 2px solid #6F4E37;
+  transition: 0.3s ease;
+}
+
+.halaman-akun .akun-menu-item:hover {
+  background: #6F4E37;
+  color: #FFFFFF;
+}

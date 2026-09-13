@@ -111,84 +111,135 @@ body{
  position: relative;
 }
 
-.navbar-container{
- position: absolute;
- z-index: 9999 ;
- top: 25px;
- left: 550px;
- background: none;
- padding: 18px 40px;
- display: flex;
- align-items: center;
+.navbar-container {
+  position: absolute;
+  z-index: 1000001;
+  top: 40px;
+  left: 60px;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 100px;
 }
 
-.navbar-links{
- display: flex;
- justify-content: center;
- align-items: center;
- font-size: 20px;
- font-family: inherit;
- gap: 35px;
- left: -80px;
- position: relative;
- white-space: nowrap;
+.toko-logo {
+  font-family: "Recoleta", serif;
+  font-size: 34px;
+  font-weight: 1000;
+  color: #8e7115;
+  letter-spacing: 1px;
+  user-select: none;
 }
 
-.nav-link{
- color: #4F3D36;
- font-weight: 600;
- text-decoration: none;
- font-family: inherit;
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 35px;
+
+  font-size: 20px;
+  font-family: inherit;
+  white-space: nowrap;
+}
+
+.nav-link {
+  color: #4F3D36;
+  font-weight: 600;
+  text-decoration: none;
+  font-family: inherit;
 }
 
 .nav-link-aktif {
- color: #B8945B;
- font-weight: 700;
+  color: #B8945B;
+  font-weight: 700;
 }
 
-.login-container{
- display: flex;
- align-items: center;
- gap: 10px;
- left: 107%;
- position: absolute;
+.link-keranjang {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
 }
 
-.btn-masuk{
- text-decoration: none;
- border-radius:  999px;
- background:  #FFFFFF;
- color: #6F4E37;
- border: 2px solid #6F4E37;
- font-weight: 600;
- padding: 12px 15px;
- transition: .3s ease;
- flex-shrink: 0;
+.icon-keranjang {
+  color: #3B2A26;
+  cursor: pointer;
+  transition: .3s ease;
 }
 
-
-.btn-navbar-daftar{
- text-decoration: none;
- border-radius:  999px;
- background: #5D4037;
- color: white;
- border: 2px solid #5D4037;   
- font-weight: 600;
- padding: 12px 15px;
- flex-shrink: 0;
+.icon-keranjang:hover {
+  color: #8B5E3C;
+  transform: scale(1.08);
 }
 
+.login-container {
+  position: absolute;
+  top: 45px;
+  right: 0;
 
-.toko-logo{
- position: absolute;
- top: 38px;
- left: 50px;
- font-family: "Recoleta", serif;
- font-size: 34px;
- font-weight: 1000;
- color: #8e7115;
- letter-spacing: 1px;
- user-select: none;
+  width: 220px;
+  padding: 25px;
+
+  background: white;
+  border-radius: 0 0 20px 20px;
+
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 10000;
+}
+
+.akun-container {
+  position: relative;
+}
+
+.akun-trigger {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: none;
+  border: none;
+  color: #4F3D36;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 8px 0;
+  transition: 0.2s ease;
+}
+
+.akun-trigger:active {
+  transform: scale(0.95);
+}
+
+.akun-panel {
+  position: absolute;
+  top: 45px;
+  right: 0;
+
+  width: 150px;
+  background: #FFFFFF;
+  border: 1px solid #E5E0DC;
+  border-radius: 15px;
+  padding: 8px;
+
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+
+  z-index: 100000;
+}
+
+.akun-panel-item {
+  display: block;
+  padding: 12px 15px;
+  color: #4F3D36;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 10px;
+}
+
+.akun-panel-item:hover {
+  background: #F5F1ED;
 }
 
 .navbar-line{
@@ -200,27 +251,6 @@ body{
  background: #BDBDBD;
  box-shadow: 0 2px 10px rgba(0,0,0,.15);
  z-index:  99999;
-}
-
-.link-keranjang{
- display:flex;
- align-items:center;
- text-decoration:none;
-}
-
-.icon-keranjang{
- color:#3B2A26;
- cursor:pointer;
- transition:.3s ease;
- position: absolute;
- margin-left: 968px;
- margin-top: 44px;
-
-}
-
-.icon-keranjang:hover{
- color:#8B5E3C;
- transform:scale(1.08);
 }
 
 /* ========================= */
@@ -302,7 +332,6 @@ body{
   width: 60px;
   height: 60px;
   position: relative;
-  left: 120px;
   border-radius: 50%;
   overflow: hidden;
 
@@ -328,4 +357,157 @@ body{
 
 .btn-profil:active {
   transform: scale(0.85);
+}
+
+
+
+/* ========================= */
+/* RESPONSIVE MOBILE */
+/* ========================= */
+
+/* ========================= */
+/* RESPONSIVE MOBILE */
+/* ========================= */
+
+@media (max-width: 768px) {
+
+  /* ========================= */
+  /* HEADER ATAS */
+  /* ========================= */
+
+  .navbar-container {
+    position: absolute;
+    top: 20px;
+    left: 15px;
+    right: 15px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 0;
+  }
+
+  .navbar-line {
+    top: 63px;
+  }
+
+  .toko-logo {
+    font-size: 16px;
+    white-space: nowrap;
+  }
+
+  .navbar-links {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    width: 100%;
+    padding: 10px 5px;
+
+    background: #FFFFFF;
+    border-top: 1px solid #E5E0DC;
+
+    z-index: 1000002;
+  }
+
+  .nav-link {
+    font-size: 12px;
+  }
+
+  .link-keranjang {
+    margin-left: auto;
+    margin-right: 18px;
+  }
+
+  .icon-keranjang {
+    width: 24px;
+    height: 24px;
+  }
+
+  .akun-trigger {
+    font-size: 14px;
+  }
+
+
+  /* ========================= */
+  /* SLIDER */
+  /* ========================= */
+
+  .bagian-slider {
+    height: 300px;
+    padding-top: 65px;
+  }
+
+  .tombol-kiri,
+  .tombol-kanan {
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+  }
+
+  .tombol-kiri {
+    left: 15px;
+  }
+
+  .tombol-kanan {
+    right: 15px;
+  }
+
+  .wadah-indikator {
+    bottom: 20px;
+  }
+
+  .indikator {
+    width: 9px;
+    height: 9px;
+  }
+
+
+  /* ========================= */
+  /* BEST SELLER */
+  /* ========================= */
+
+  .produk-best-seller {
+    margin-top: 40px;
+    padding: 0 20px;
+
+    padding-bottom: 80px;
+  }
+
+  .judul-produk-best-seller {
+    font-size: 20px;
+    margin-bottom: 40px;
+  }
+
+  .wadah-produk-best-seller {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px 20px;
+  }
+
+  .kartu-produk-best-seller {
+    width: 100%;
+    height: auto;
+  }
+
+  .gambar-produk-best-seller {
+    height: auto;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+
+  .nama-produk-best-seller {
+    font-size: 18px;
+  }
+
+  .harga-produk-best-seller {
+    font-size: 16px;
+  }
 }

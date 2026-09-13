@@ -41,6 +41,7 @@ export default function HalamanLogin() {
     });
 
     localStorage.setItem("sudahLogin", "true");
+    window.dispatchEvent(new Event("statusLoginBerubah"));
     router.replace("/");
   };
 
