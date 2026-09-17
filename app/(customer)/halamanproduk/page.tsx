@@ -1,5 +1,6 @@
 "use client";
 
+import { useRouter } from "next/navigation";
 import "./halamanproduk.css";
 import { Playfair_Display } from "next/font/google";
 import { useState } from "react";
@@ -10,111 +11,34 @@ const daftarProduk = [
     nama: "Aren Latte",
     harga: "Rp18.000",
     gambar: "/arenlatte.png",
-    kategori: "Kopi"
+    kategori: "Kopi",
+    deskripsi:
+      "Perpaduan espresso, susu, dan gula aren dengan rasa manis dan creamy.",
   },
   {
     nama: "Americano",
     harga: "Rp15.000",
     gambar: "/americano.png",
-    kategori: "Kopi"
-  },
-  {
-    nama: "Butterscotch",
-    harga: "Rp22.000",
-    gambar: "/butterscotch.png",
-    kategori: "Kopi"
-  },
-  {
-    nama: "Kopi Susu",
-    harga: "Rp20.000",
-    gambar: "/kopisusu.png",
-    kategori: "Kopi"
+    kategori: "Kopi",
+    deskripsi:
+      "Perpaduan espresso dengan air yang menghasilkan rasa kopi yang ringan dan menyegarkan.",
   },
   {
     nama: "Matcha Latte",
     harga: "Rp20.000",
     gambar: "/nonkopi1.jpg",
-    kategori: "Non-Kopi"
+    kategori: "Non-Kopi",
+    deskripsi:
+      "Minuman matcha creamy dengan cita rasa lembut dan sedikit manis.",
   },
   {
     nama: "Chocolate Latte",
     harga: "Rp20.000",
     gambar: "/nonkopi2.jpg",
-    kategori: "Non-Kopi"
+    kategori: "Non-Kopi",
+    deskripsi:
+      "Minuman cokelat creamy dengan rasa cokelat yang lembut dan manis.",
   },
-  {
-    nama: "Blueberry Milk",
-    harga: "Rp20.000",
-    gambar: "/nonkopi3.jpg",
-    kategori: "Non-Kopi"
-  },
-  {
-    nama: "Strawberry Milk",
-    harga: "Rp20.000",
-    gambar: "/nonkopi4.jpg",
-    kategori: "Non-Kopi"
-  },
-  {
-    nama: "Mineral Water — 500ml",
-    harga: "Rp20.000",
-    gambar: "/mineralbiasa.jpg",
-    kategori: "Mineral"
-  },
-  {
-    nama: "Mineral Water — 600ml",
-    harga: "Rp20.000",
-    gambar: "/mineralpremium.jpg",
-    kategori: "Mineral"
-  },
-  {
-    nama: "Creamy Chicken Pasta",
-    harga: "Rp17.000",
-    gambar: "/makanan2.jpg",
-    kategori: "Makanan"
-  },
-  {
-    nama: "Chicken Rice Bowl",
-    harga: "Rp17.000",
-    gambar: "/makanan3.jpg",
-    kategori: "Makanan"
-  },
-  {
-    nama: "Nasi Goreng",
-    harga: "Rp17.000",
-    gambar: "/makanan4.jpg",
-    kategori: "Makanan"
-  },
-  {
-    nama: "Spaghetti Bolognese",
-    harga: "Rp17.000",
-    gambar: "/makanan5.jpg",
-    kategori: "Makanan"
-  },
-  {
-    nama: "Croissant",
-    harga: "Rp17.000",
-    gambar: "/snack1.jpg",
-    kategori: "Snack"
-  },
-  {
-    nama: "Chocolate Cake",
-    harga: "Rp25.000",
-    gambar: "/snack2.jpg",
-    kategori: "Snack"
-  },
-  {
-    nama: "Chocolate Chip Cookies",
-    harga: "Rp25.000",
-    gambar: "/snack3.jpg",
-    kategori: "Snack"
-  },
-  {
-    nama: "Blueberry Muffin",
-    harga: "Rp25.000",
-    gambar: "/snack4.jpg",
-    kategori: "Snack"
-  },
-
 ];
 
 const playfair = Playfair_Display({
@@ -128,29 +52,31 @@ type ProdukKeranjang = {
   harga: string;
   gambar: string;
   kategori: string;
+  deskripsi: string;
   jumlah: number;
 };
 
 export default function HalamanProduk() {
-
+  const router = useRouter();
   const [keranjang, setKeranjang] = useState<ProdukKeranjang[]>([]);
   const [keranjangBuka, setKeranjangBuka] = useState(false);
   const [qrisBuka, setQrisBuka] = useState(false);
   const [buktiPembayaran, setBuktiPembayaran] = useState<File | null>(null);
   const [kategoriAktif, setKategoriAktif] = useState("Semua");
   const [pencarian, setPencarian] = useState("");
+  const [produkTerpilih, setProdukTerpilih] = useState<
+    typeof daftarProduk[number] | null
+  >(null);
 
   // Menentukan produk yang akan ditampilkan
   const produkDitampilkan = daftarProduk.filter((produk) => {
-
     const sesuaiKategori =
       kategoriAktif === "Semua" ||
       produk.kategori === kategoriAktif;
 
-    const sesuaiPencarian =
-      produk.nama
-        .toLowerCase()
-        .includes(pencarian.toLowerCase());
+    const sesuaiPencarian = produk.nama
+      .toLowerCase()
+      .includes(pencarian.toLowerCase());
 
     return sesuaiKategori && sesuaiPencarian;
   });
@@ -159,20 +85,25 @@ export default function HalamanProduk() {
   const tambahKeranjang = (
     produk: typeof daftarProduk[number]
   ) => {
+    const statusLogin = localStorage.getItem("sudahLogin");
+
+    if (statusLogin !== "true") {
+      alert("Silahkan login terlebih dahulu");
+      router.push("/login");
+      return;
+    }
 
     setKeranjang((keranjangSebelumnya) => {
-
       const produkSudahAda = keranjangSebelumnya.find(
         (item) => item.nama === produk.nama
       );
 
       if (produkSudahAda) {
-
         return keranjangSebelumnya.map((item) =>
           item.nama === produk.nama
             ? {
                 ...item,
-                jumlah: item.jumlah + 1
+                jumlah: item.jumlah + 1,
               }
             : item
         );
@@ -190,14 +121,13 @@ export default function HalamanProduk() {
 
   // Mengurangi jumlah produk
   const kurangiJumlah = (namaProduk: string) => {
-
     setKeranjang((keranjangSebelumnya) =>
       keranjangSebelumnya
         .map((item) =>
           item.nama === namaProduk
             ? {
                 ...item,
-                jumlah: item.jumlah - 1
+                jumlah: item.jumlah - 1,
               }
             : item
         )
@@ -207,7 +137,6 @@ export default function HalamanProduk() {
 
   // Menghapus produk dari keranjang
   const hapusProduk = (namaProduk: string) => {
-
     setKeranjang((keranjangSebelumnya) =>
       keranjangSebelumnya.filter(
         (item) => item.nama !== namaProduk
@@ -223,7 +152,6 @@ export default function HalamanProduk() {
 
   return (
     <div className={`halaman-produk ${playfair.className}`}>
-
       <section className="bagian-produk">
 
         <div className="kepala-produk">
@@ -279,7 +207,11 @@ export default function HalamanProduk() {
           </button>
 
           <button
-            className={kategoriAktif === "Mineral" ? "kategori-aktif" : ""}
+            className={
+              kategoriAktif === "Mineral"
+                ? "kategori-aktif"
+                : ""
+            }
             onClick={() => setKategoriAktif("Mineral")}
           >
             Mineral
@@ -320,6 +252,8 @@ export default function HalamanProduk() {
 
         </div>
 
+        {/* DAFTAR PRODUK */}
+
         <div className="daftar-produk">
 
           {produkDitampilkan.map((produk, index) => (
@@ -329,7 +263,18 @@ export default function HalamanProduk() {
               key={index}
             >
 
-              <div className="gambar-produk">
+              {/* GAMBAR PRODUK */}
+
+              <div
+                className="gambar-produk"
+                onClick={() =>
+                  setProdukTerpilih(
+                    produkTerpilih?.nama === produk.nama
+                      ? null
+                      : produk
+                  )
+                }
+              >
 
                 <img
                   src={produk.gambar}
@@ -337,6 +282,8 @@ export default function HalamanProduk() {
                 />
 
               </div>
+
+              {/* INFORMASI PRODUK */}
 
               <div className="informasi-produk">
 
@@ -350,7 +297,9 @@ export default function HalamanProduk() {
 
                 <button
                   className="tombol-tambah-keranjang"
-                  onClick={() => tambahKeranjang(produk)}
+                  onClick={() =>
+                    tambahKeranjang(produk)
+                  }
                 >
 
                   <Plus
@@ -361,6 +310,37 @@ export default function HalamanProduk() {
                 </button>
 
               </div>
+
+              {/* DETAIL PRODUK MELAYANG */}
+
+              {produkTerpilih?.nama === produk.nama && (
+
+                <div 
+                className="detail-produk"
+                onClick={() => setProdukTerpilih(null)}
+                >
+
+                  <img
+                    src={produk.gambar}
+                    alt={produk.nama}
+                    className="gambar-detail-produk"
+                  />
+
+                  <h2 className="nama-detail-produk">
+                    {produk.nama}
+                  </h2>
+
+                  <p className="harga-detail-produk">
+                    {produk.harga}
+                  </p>
+
+                  <p className="deskripsi-detail-produk">
+                    {produk.deskripsi}
+                  </p>
+
+                </div>
+
+              )}
 
             </div>
 
@@ -441,7 +421,9 @@ export default function HalamanProduk() {
 
               <button
                 className="tombol-tutup-keranjang"
-                onClick={() => setKeranjangBuka(false)}
+                onClick={() =>
+                  setKeranjangBuka(false)
+                }
               >
 
                 <X size={22} />
@@ -483,7 +465,9 @@ export default function HalamanProduk() {
                         kurangiJumlah(item.nama)
                       }
                     >
+
                       <Minus size={15} />
+
                     </button>
 
                     <span>
@@ -495,7 +479,9 @@ export default function HalamanProduk() {
                         tambahKeranjang(item)
                       }
                     >
+
                       <Plus size={15} />
+
                     </button>
 
                   </div>
@@ -536,7 +522,9 @@ export default function HalamanProduk() {
                           .replace(".", "")
                       );
 
-                      return total + hargaAngka * item.jumlah;
+                      return total +
+                        hargaAngka *
+                        item.jumlah;
 
                     }, 0)
                     .toLocaleString("id-ID")}
@@ -544,17 +532,21 @@ export default function HalamanProduk() {
 
               </div>
 
-               <div className="total-keranjang">
+              <div className="total-keranjang">
+
                 <span>
                   Metode Pembayaran
                 </span>
 
                 <strong
-                className="qris-pembayaran"
-                onClick={() => setQrisBuka(true)}
+                  className="qris-pembayaran"
+                  onClick={() =>
+                    setQrisBuka(true)
+                  }
                 >
                   QRIS
                 </strong>
+
               </div>
 
               <div className="upload-bukti-pembayaran">
@@ -569,24 +561,29 @@ export default function HalamanProduk() {
                     type="file"
                     accept="image/*"
                     onChange={(e) => {
-                      const file = e.target.files?.[0];
+
+                      const file =
+                        e.target.files?.[0];
 
                       if (file) {
                         setBuktiPembayaran(file);
                       }
+
                     }}
                   />
 
                   <span className="teks-dalam-upload">
+
                     {buktiPembayaran
                       ? buktiPembayaran.name
                       : "Upload Foto"}
+
                   </span>
 
                 </label>
 
               </div>
-        
+
               <button className="tombol-checkout">
                 Checkout
               </button>
@@ -597,7 +594,10 @@ export default function HalamanProduk() {
 
         )}
 
+        {/* RECTANGLE QRIS */}
+
         {qrisBuka && (
+
           <div className="kotak-qris">
 
             <div className="kepala-qris">
@@ -608,24 +608,30 @@ export default function HalamanProduk() {
 
               <button
                 className="tombol-tutup-qris"
-                onClick={() => setQrisBuka(false)}
+                onClick={() =>
+                  setQrisBuka(false)
+                }
               >
+
                 <X size={22} />
+
               </button>
 
             </div>
 
             <div className="gambar-qris-sementara">
+
               <span>
                 QRIS
               </span>
+
             </div>
 
           </div>
+
         )}
 
       </section>
-
     </div>
   );
 }

@@ -24,7 +24,7 @@ body {
  width: 260px;
  height: 100vh;
  position: fixed;
- top: 0;
+ top: -5px;
  left: 0;
  overflow-y: auto;
  background: #FFFFFF;
@@ -32,7 +32,7 @@ body {
  /* Pakai border tipis, hapus shadow tebal */
  border-right: 1px solid #E2E8F0;
  box-shadow: none;
- padding: 20px 16px;
+ padding: 20px 20px;
  display: flex;
  flex-direction: column;
  z-index: 99;
@@ -54,7 +54,7 @@ body {
   align-items: center;
   margin-top: 10px;
   margin-bottom: 25px;
-  font-size: 20px; /* Diperkecil dari 28px */
+  font-size: 18px; /* Diperkecil dari 28px */
   font-weight: 700;
   color: #1E293B;
   gap: 18px;
@@ -74,7 +74,8 @@ body {
  font-family: inherit;
  display:flex;
  flex-direction:column;
- gap:18px;
+ gap:30px;
+ margin-top: 20px;
 }
 
 
@@ -90,9 +91,10 @@ body {
  font-size:14px;
  font-weight:500;
  padding:10px 14px;
- border-radius:8px;
+ border-radius:10px;
  transition:all 0.2s ease;
- gap: 18px;
+ gap: 20px;
+ 
 }
 
 .item-menu:hover,

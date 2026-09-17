@@ -130,6 +130,8 @@ body{
   color: #8e7115;
   letter-spacing: 1px;
   user-select: none;
+  position: relative;
+  top: -5px;
 }
 
 .navbar-links {
@@ -192,6 +194,9 @@ body{
 
 .akun-container {
   position: relative;
+  height: 38px;
+  display: flex;
+  align-items: center;
 }
 
 .akun-trigger {
@@ -332,6 +337,7 @@ body{
   width: 60px;
   height: 60px;
   position: relative;
+ 
   border-radius: 50%;
   overflow: hidden;
 

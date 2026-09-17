@@ -197,12 +197,12 @@ export default function TentangKami() {
               <div className="header-ulasan">
 
                 <div className="avatar-ulasan">
-                  V
+                  C
                 </div>
 
                 <div className="identitas-ulasan">
 
-                  <h3>Ativ</h3>
+                  <h3>cassa</h3>
 
                   <div className="bintang-ulasan">
                     ⭐⭐⭐⭐⭐

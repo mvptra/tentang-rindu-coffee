@@ -2,6 +2,7 @@
 
 import "./layout.css";
 import { useState } from "react";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { Poppins} from "next/font/google";
 import {
@@ -33,6 +34,7 @@ export default function LayoutAdmin({
 }: {
   children: React.ReactNode;
 }) {
+  const pathname = usePathname();
   const [sidebarKecil, setSidebarKecil] = useState(false);
   const [pengaturanBuka, setPengaturanBuka] = useState(false);
 
@@ -104,27 +106,51 @@ export default function LayoutAdmin({
 
         <nav className="menu-admin">
 
-          <Link href="/dashboard" className="item-menu">
+          <Link href="/dashboard" 
+          className={`item-menu ${
+            pathname === "/dashboard" ? "aktif" : ""
+          }`}
+          >
+
           <LayoutDashboard />
             Dashboard Admin
           </Link>
 
-          <Link href="/produk" className="item-menu">
+          <Link href="/produk"
+          className={`item-menu ${
+            pathname === "/produk" ? "aktif" : ""
+          }`}
+          >
+
           <BarChart3 />
             Manajemen Produk
           </Link>
 
-          <Link href="/pesanan" className="item-menu">
+          <Link href="/pesanan" className={`item-menu ${
+            pathname === "/pesanan" ? "aktif" : ""
+          }`}
+          >
+
           <Package />
             Manajamen Pesanan
           </Link>
 
-          <Link href="/datapelanggan" className="item-menu">
+          <Link href="/datapelanggan" 
+          className={`item-menu ${
+            pathname === "/datapelanggan" ? "aktif" : ""
+          }`}
+          >
+
           <Users />
             Data Pelanggan
           </Link>
 
-          <Link href="/laporankeuangan" className="item-menu">
+          <Link href="/laporankeuangan" 
+           className={`item-menu ${
+            pathname === "/laporankeuangan" ? "aktif" : ""
+          }`}
+          >
+            
           <WalletCards />
             Laporan Keuangan
           </Link>
@@ -152,12 +178,12 @@ export default function LayoutAdmin({
           <input type="text" placeholder="Search Produk..." />
         </div>
 
-         <button
-    className="tombol-pengaturan-header"
-    onClick={() => setPengaturanBuka(!pengaturanBuka)}
-  >
-    <Settings size={24} />
-  </button>
+        <button
+          className="tombol-pengaturan-header"
+          onClick={() => setPengaturanBuka(!pengaturanBuka)}
+        >
+          <Settings size={24} />
+        </button>
 
   {pengaturanBuka && (
     <div className="panel-pengaturan-header">
